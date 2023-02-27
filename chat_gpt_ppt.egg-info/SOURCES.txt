@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+cgp/__init__.py
+chat_gpt_ppt.egg-info/PKG-INFO
+chat_gpt_ppt.egg-info/SOURCES.txt
+chat_gpt_ppt.egg-info/dependency_links.txt
+chat_gpt_ppt.egg-info/entry_points.txt
+chat_gpt_ppt.egg-info/requires.txt
+chat_gpt_ppt.egg-info/top_level.txt

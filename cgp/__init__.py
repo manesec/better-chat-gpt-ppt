@@ -1,7 +1,7 @@
 import subprocess
 import tempfile
 
-from revChatGPT.ChatGPT import Chatbot
+from revChatGPT.V1 import Chatbot
 from loguru import logger
 import fire
 
@@ -9,17 +9,22 @@ import fire
 class Bot(object):
     def __init__(self, config: dict):
         chatbot = Chatbot(config)
-        chatbot.reset_chat()
-        chatbot.refresh_session()
+        # chatbot.reset_chat()
+        # chatbot.refresh_session()
         self._bot = chatbot
         self._conversation_id = None
         logger.info("chatbot ready")
 
     def get_resp(self, req: str) -> str:
-        resp = self._bot.ask(req, conversation_id=self._conversation_id)
+        logger.info("> " + req)
+        resp = ""
+        for data in self._bot.ask(
+          req
+        ):
+            resp = data["message"]
+        logger.info("< " + resp)
         # update
-        self._conversation_id = resp["conversation_id"]
-        return resp["message"]
+        return resp
 
     def reset(self):
         self._conversation_id = None
@@ -53,7 +58,7 @@ def main(
         output_file: str = "output.html",
         marp_exe: str = "./marp"):
     with open(token, encoding="utf-8") as f:
-        session_token = f.read()
+        session_token = f.read().strip()
 
     with open(input_file, encoding="utf-8") as f:
         question_list = f.readlines()

@@ -1,3 +1,55 @@
+# better-chat-gpt-ppt
+
+This is one of the version fork on [williamfzc/chat-gpt-ppt](https://github.com/williamfzc/chat-gpt-ppt), improved by [@manesec](https://github.com/manesec).
+
++ Update new version of [ChatGPT](https://github.com/acheong08/ChatGPT).
++ More info message.
+
+
+## Better note
+
+Presetup:
+
+```bash
+sudo pip3 install chat_gpt_ppt
+git clone https://github.com/manesec/better-chat-gpt-ppt.git
+cd better-chat-gpt-ppt
+sudo python3 setup.py install -f
+
+# install marp
+wget https://github.com/marp-team/marp-cli/releases/download/v2.2.2/marp-cli-v2.2.2-linux.tar.gz -O /tmp/marp.tar.gz
+cd /tmp 
+tar -xf /tmp/marp.tar.gz
+sudo mv /tmp/marp /bin/marp
+cd -
+```
+
+## To support `*.pptx`, `.pptx` file just image like screenshot :( 
+**Recommand to use `.pdf` to output.**
+
+A lazy way to install google chrome faster.
+
+If you like to output `*.pptx` files.
+
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google*.deb
+sudo apt --fix-broken install -y
+sudo dpkg -i google*.deb
+```
+
+Usage:
+```bash
+# With html output
+cgp token.txt topic.txt -m /bin/marp -o output.html
+
+# With pdf output (recommand)
+cgp token.txt topic.txt -m /bin/marp -o output.pdf
+
+# With pptx output 
+cgp token.txt topic.txt -m /bin/marp -o output.pptx
+```
+
 # chat-gpt-ppt
 
 use ChatGPT to generate PPT automatically
