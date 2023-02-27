@@ -2,7 +2,7 @@
 
 This is one of the version fork on [williamfzc/chat-gpt-ppt](https://github.com/williamfzc/chat-gpt-ppt), improved by [@manesec](https://github.com/manesec).
 
-+ Update new version of [ChatGPT](https://github.com/acheong08/ChatGPT).
++ Update new version of [ChatGPT](https://github.com/acheong08/ChatGPT), the new version of chatgpt can be faster without a browser! Thanks for [@acheong08](https://github.com/acheong08).
 + More info message.
 
 
